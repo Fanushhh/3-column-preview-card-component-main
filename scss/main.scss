@@ -1,0 +1,100 @@
+@import 'resets';
+@import 'responsiveness';
+
+$first-card:hsl(31, 77%, 52%);
+$second-card:hsl(184, 100%, 22%);
+$third-card:hsl(179, 100%, 13%);
+$background-color:hsl(0, 0%, 95%);
+$paragraph-color:hsla(0, 0%, 100%, 0.75);
+$title-font:'Big Shoulders Display', cursive;
+$paragraph-font: 'Lexend Deca', sans-serif;
+$paragraph-size: 15px;
+$font-weight-paragraph: 400;
+$font-weight-title:700;
+
+body{
+    background-color: $background-color;
+    font-size: $paragraph-size;
+    font-weight: $font-weight-paragraph;
+    font-family: $paragraph-font;
+    color:$paragraph-color;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem auto;
+    
+    @include for-tablet-up{
+        margin: 0;
+        align-items: center;
+        height: 100vh;
+        
+    }
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    @include for-tablet-up{
+        flex-direction: row;
+        max-width: 1000px;
+    }
+    &-1{
+        background-color: $first-card;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        @include for-tablet-up{
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 10px;
+        }
+    }
+    &-2{
+        background-color: $second-card;
+    }
+    &-3{
+        background-color: $third-card;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        @include for-tablet-up{
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 10px;
+        }
+    }
+    &-1,&-2,&-3{
+        padding: 3em;
+
+       .card-title{
+        padding: 0.8em 0;
+        font-family: $title-font;
+        text-transform: uppercase;
+        font-size: 36px;
+        color:#fff;
+       }
+       .card-description{
+        padding-right: 10px;
+        line-height: 1.6;
+        @include for-tablet-up{
+            padding-right: 1.8em;
+        }
+       }
+
+       .card-button{
+        margin-top: 1.5em;
+        padding: 0.8em 2em;
+        border-radius: 30px;
+        border: 2px solid white;
+        cursor: pointer;
+        &:hover{
+                background-color: transparent;
+                color:#fff;
+        }
+        @include for-tablet-up{
+            margin-top: 5em;
+        }
+       }
+    }
+}
+
