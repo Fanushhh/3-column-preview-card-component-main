@@ -172,4 +172,9 @@ body {
   .card-1 .card-button, .card-2 .card-button, .card-3 .card-button {
     margin-top: 5em;
   }
+}
+
+.attribution {
+  color: #000;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */
